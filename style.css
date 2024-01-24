@@ -1,7 +1,9 @@
 .mein {
+  margin: 10px;
   color: darkblue;
 }
 
 a:hover {
   color: yellow;
+  
 }
