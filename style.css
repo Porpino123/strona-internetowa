@@ -2,6 +2,6 @@
   color: darkblue;
 }
 
-a {
+a:hover {
   background-color: yellow;
 }
