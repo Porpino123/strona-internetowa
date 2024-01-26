@@ -1,34 +1,54 @@
 <head> 
  <link href='style.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+    
+function oblicz() {
+    const a=parseFloat(document.getElementById("a").value);
+    const b=parseFloat(document.getElementById("b").value);
+    const c=parseFloat(document.getElementById("c").value);
+    console.log("obliczam");
+    console.log(a);
+    document.getElementById("main").innerHTML=`${a}x^2+${b}x+${c}`;
+    const delta =b*b-4*a*c;
+    document.getElementById("delta").innerHTML=`delta = ${delta}`;
+    const x_1 =(-b-Math.sqrt (delta))/2/a;
+    document.getElementById("x_1").innerHTML=`x_1 = ${x_1}`;
+    const x_2 =(-b+Math.sqrt (delta))/2/a;
+    document.getElementById("x_2").innerHTML=`x_2 = ${x_2}`;
+}
+
+</script>
 </head>
 <body>
+<h1>Kalkulator funkcji kwadratowych</h1>
 <div class="calculator">
-            <form name="myform" action="javascript:handleIt()"> 
+            <form name="myform" action="javascript:oblicz()"> 
                 <table>
-                    <tr class="age">
-                      <td>Age</td>
-                      <td><input type="number" name="age" id="age" min="1" max="120" step="1" value="19"></td>
+                    <tr >
+                      <td>a</td>
+                      <td><input type="number" name="a" id="a" min="-10000" max="10000" step="1" value="1"></td>
                     </tr>
-                    <tr class="gender">
-                        <td>Gender</td>
-                        <td>
-                          <label><input type="radio" name="gender" value="male" id="male" checked> Male</label>
-                          <label><input type="radio" name="gender" value="female" id="female"> Female</label>
-                        </td>
-                      </tr>
-                    <tr class="weight">
-                      <td>Weight</td>
-                      <td><input type="number" name="weight" id="weight" min="1" max="250" step="0.1" value="74"></td>
+                    
+                    <tr class="b">
+                      <td>b</td>
+                      <td><input type="number" name="b" id="b" min="-10000" max="10000" step="0.1" value="1"></td>
                     </tr>
-                    <tr class="height">
-                      <td>Height</td>
-                      <td><input type="number" name="height" id="height" min="1" max="250" step="1" value="180"></td>
+                    <tr >
+                      <td>c</td>
+                      <td><input type="number" name="c" id="c" min="-10000" max="10000" step="1" value="-6"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Calculate" width="120" height="30"></td>
+                        <td><input type="submit" value="oblicz" width="120" height="30"></td>
                     </tr>
                 </table>
             </form>   
+        </div>
+  <div class="result">
+            <p id="main"></p>
+            <p id="delta"></p>
+            <p id="x_1"></p>
+            <p id="x_2"></p>
         </div>
  </body>
